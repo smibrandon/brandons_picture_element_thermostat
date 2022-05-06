@@ -1,0 +1,20 @@
+visdisplay_decreasetemp:
+  sequence:
+  - service: climate.set_temperature
+    target:
+      entity_id: climate.thermostat
+    data:
+      temperature: '{{ state_attr(''climate.thermostat'', ''temperature'') -1 }}'
+  mode: single
+  icon: mdi:minus
+
+
+visdisplay_increasetemp:
+  sequence:
+  - service: climate.set_temperature
+    target:
+      entity_id: climate.thermostat
+    data:
+      temperature: '{{ state_attr(''climate.thermostat'', ''temperature'') +1 }}'
+  mode: single
+  icon: mdi:plus

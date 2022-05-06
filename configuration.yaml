@@ -1,0 +1,9 @@
+sensor:
+  - platform: template
+    sensors:
+      visdisplay_state:
+        value_template: "{{ states('climate.thermostat') }} / {{ state_attr('climate.thermostat', 'hvac_action') }}"
+      visdisplay_tempact:
+        value_template: "{{ state_attr('climate.thermostat', 'current_temperature') }}"
+      visdisplay_tempset:
+        value_template: "{{ state_attr('climate.thermostat', 'temperature') }}"
